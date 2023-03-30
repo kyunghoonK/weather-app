@@ -12,19 +12,21 @@ import WeatherButton from './component/WeatherButton';
 // 6. 데이터를 들고오는 동안 로딩 스피너가 돈다.
 
 function App() {
+  const [weather, setWeather] = useState(null);
+  const cities = ['paris', 'new york', 'tokyo', 'seoul']
   const getCurrentLocation=()=>{
     navigator.geolocation.getCurrentPosition((position)=>{
       let lat = position.coords.latitude;
       let lon = position.coords.longitude;
-      getWeatherByCurrentLocation(lat, lon)
+      getWeatherByCurrentLocation(lat, lon);
     });
   };
 
   const getWeatherByCurrentLocation= async(lat, lon)=>{
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=a4764709ff76e2cc45b062b170d91e52`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=a4764709ff76e2cc45b062b170d91e52&units=metric`;
     let response = await fetch(url);
     let data = await response.json();
-    console.log("data", data);
+    setWeather(data);
   };
 
   // useEffect(함수, 어레이)
@@ -34,8 +36,8 @@ function App() {
   return (
     <div>
       <div className='container'>
-        <WeatherBox/>
-        <WeatherButton/>
+        <WeatherBox weather={weather}/>
+        <WeatherButton cities={cities}/>
       </div>
     </div>
   );
