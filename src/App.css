@@ -1,5 +1,5 @@
 body{
-    background: url(https://pbs.twimg.com/card_img/1637967027385008130/Z00Noh8u?format=jpg&name=900x900);
+    background: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbp4UUG%2Fbtr53IAJn8O%2Fn1Jvd8hPg9O2ghV77ckrkk%2Fimg.jpg);
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,5 +17,5 @@ body{
     border: 3px solid white;
     padding: 50px;
     border-radius: 20px;
-    background-color: dimgray;
+    background-color: beige;
 }
